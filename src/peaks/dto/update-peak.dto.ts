@@ -1,0 +1,14 @@
+import { IsOptional, IsString, MaxLength, MinLength } from 'class-validator';
+
+export class UpdatePeakDto {
+  @IsOptional()
+  @IsString()
+  @MinLength(2)
+  @MaxLength(100)
+  name?: string;
+
+  @IsOptional()
+  @IsString()
+  @MaxLength(100)
+  city?: string | null;
+}
